@@ -27,24 +27,20 @@ def pricing(request):
     return render(request, 'pricing.html')
 
 
-# Contact Page
-def contact(request):
-    return render(request, 'contact.html')
-
 
 # Contact Form (Customer Form Integration)
-def contact1(request):
+def contact(request):
     if request.method == 'POST':
         form = CustomerForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             messages.success(request, "Customer details submitted successfully!")
-            return redirect('contact1')  # Redirect to the same page after submission
+            return redirect('contact')  # Redirect to the same page after submission
         else:
             messages.error(request, "Error in form submission. Please correct the errors below.")
     else:
         form = CustomerForm()
-    return render(request, 'contact1.html', {'form': form})
+    return render(request, 'contact.html', {'form': form})
 
 
 # Update Customer Details

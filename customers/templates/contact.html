@@ -2,44 +2,37 @@
 
 {% block content %}
 
-<!--<div class="contact-container">-->
-<!--  <div class="contact-left">-->
-<!--    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.9634029380372!2d36.9609217!3d-0.39783140000000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1828677a4955ff13%3A0x7ae4dae9615396a6!2sDEDAN%20KIMATHI%20UNIVERSITY%20OF%20TECHNOLOGY!5e1!3m2!1sen!2ske!4v1729486479494!5m2!1sen!2ske"-->
-<!--    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
+<div class="container mt-5">
+  <div class="row">
 
-<!--    <div class="contact-details">-->
-<!--      <h2>Our Offices</h2>-->
-<!--      <p><strong>Physical Address:</strong> Along Nyeri - Mweiga road.</p>-->
-<!--      <p><strong>Postal Address:</strong> Private Bag - 10143, Dedan Kimathi.</p>-->
-<!--      <p><strong>Cell:</strong> 0768432814</p>-->
-<!--      <p><strong>Email:</strong> antonykatoi0@gmail.com</p>-->
-<!--      <p><strong>Working Hours:</strong> Monday - Friday, 8:00AM - 5:00PM</p>-->
-<!--    </div>-->
-<!--  </div>-->
+    <!-- Left Section: Map and Contact Details -->
+    <div class="col-md-6">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.9634029380372!2d36.9609217!3d-0.39783140000000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1828677a4955ff13%3A0x7ae4dae9615396a6!2sDEDAN%20KIMATHI%20UNIVERSITY%20OF%20TECHNOLOGY!5e1!3m2!1sen!2ske!4v1729486479494!5m2!1sen!2ske"
+      width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-<!--  <div class="contact-right">-->
+      <div class="contact-details mt-4">
+        <h3>Our Offices</h3>
+        <p><strong>Physical Address:</strong> Along Nyeri - Mweiga road.</p>
+        <p><strong>Postal Address:</strong> Private Bag - 10143, Dedan Kimathi.</p>
+        <p><strong>Cell:</strong> 0768432814</p>
+        <p><strong>Email:</strong> antonykatoi0@gmail.com</p>
+        <p><strong>Working Hours:</strong> Monday - Friday, 8:00AM - 5:00PM</p>
+      </div>
+    </div>
 
-<!--    <h2>Get In Touch</h2>-->
+    <!-- Right Section: Contact Form -->
+    <div class="col-md-6">
+      <h3>Get In Touch</h3>
+      <form action="" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="mb-3">
+              {{ form.as_p }}
+          </div>
+          <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
 
-<!--    <form action="">-->
-<!--      {{ form.as_p }}-->
-<!--      <button type="submit" class="btn btn-success">SUBMIT</button>-->
-<!--    </form>-->
-<!--    <form action="#" method="post">-->
-<!--      <label for="name">Name:</label>-->
-<!--      <input type="text" id="name" name="name" placeholder="Your name" required>-->
-
-<!--      <label for="email">Email:</label>-->
-<!--      <input type="email" id="email" name="email" placeholder="Your email" required>-->
-
-<!--      <label for="message">Message:</label>-->
-<!--      <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>-->
-
-<!--      <button type="submit">Submit</button>-->
-<!--    </form>-->
-<!--  </div>-->
-<!--</div>-->
-
-
+  </div>
+</div>
 
 {% endblock %}

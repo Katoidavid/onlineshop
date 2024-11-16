@@ -25,7 +25,6 @@ urlpatterns = [
     path('features/', views.features, name='features'),# Features page at /customers/features/
     path('pricing/', views.pricing, name='pricing'),   # Pricing page at /customers/pricing/
     path('contact/', views.contact, name='contact'),   # Contact Us page at /customers/contact/
-    path('contact1/', views.contact1, name='contact1'),
     path('update/<int:id>/', views.update, name='update'),
     path('delete/<int:id>/', views.delete, name='delete'),
 ]
