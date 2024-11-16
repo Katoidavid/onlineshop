@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>THE PHOEMAR WEB</h1>
+
+<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="{% static 'images/farm.jpg' %}" class="d-block w-100" alt="Farm Image">
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="{% static 'images/Interactive Mapping.png' %}" class="d-block w-100" alt="Interactive Mapping">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/joy.jpg' %}" class="d-block w-100" alt="Joy Image">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- Introduction About Phoemar -->
+<div class="container my-4">
+  <h2 class="text-center">Welcome to Phoemar</h2>
+  <p class="lead text-center">
+    Phoemar is a thriving farm that embraces sustainable agricultural practices and innovative approaches to food security.
+    Our commitment is to provide fresh, quality produce while ensuring a positive environmental impact.
+  </p>
+</div>
+
+<!-- Jumbotron Section -->
+<div class="jumbotron bg-primary text-white text-center my-5">
+  <h3>Our Vision at Phoemar</h3>
+  <p class="lead">
+    At Phoemar, we aim to revolutionize agriculture by using the latest technologies for smarter farming, ensuring a secure food future for our communities.
+  </p>
+</div>
+
+<!-- Short Paragraph -->
+<div class="container my-4">
+  <p class="text-center">
+    Phoemar is more than just a farm – it is a vision for sustainable farming practices that not only nourish the body but also the planet.
+    We are committed to producing healthy, organic crops while contributing to the growth and development of local communities.
+  </p>
+</div>
+
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8 text-center">
+      <div class="card shadow-lg p-4 rounded" style="background-color: #f8f9fa;">
+        <h4 class="mb-4">Join Us in Our Mission</h4>
+        <p class="text-muted mb-3">
+          Explore Phoemar’s sustainable farming solutions and be part of the change that makes a difference for our future.
+          Learn more about how we innovate in agriculture for a better tomorrow.
+        </p>
+        <a href="#learnMore" class="btn btn-primary">Learn More</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

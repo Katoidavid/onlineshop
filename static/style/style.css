@@ -1,0 +1,208 @@
+
+/* Styling the navbar */
+.navbar {
+    background-color: #4CAF50; /* Green color for the navbar */
+    border-bottom: 2px solid #ddd; /* Adding a border at the bottom */
+}
+
+.navbar .navbar-brand {
+    font-size: 1.8rem;
+    color: white !important;
+    font-weight: bold;
+}
+
+.navbar .nav-link {
+    color: white !important;
+    padding: 12px 18px;
+    font-size: 1rem;
+}
+
+.navbar .nav-link:hover {
+    background-color: #45a049; /* Darker green on hover */
+    border-radius: 5px;
+}
+
+.navbar .navbar-toggler {
+    border-color: white;
+}
+
+/* Dropdown menu styling */
+.navbar .dropdown-menu {
+    background-color: #4CAF50;
+    border-radius: 5px;
+}
+
+.navbar .dropdown-item:hover {
+    background-color: #45a049;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    z-index: 999; /* Ensure the footer is always on top */
+}
+
+.main-content {
+    min-height: calc(100vh - 100px); /* Adjust 100px to your footer height */
+}
+
+footer p {
+    margin: 0;
+    font-weight: bold;
+}
+
+/* Adding responsiveness */
+@media (max-width: 767px) {
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .navbar .nav-link {
+        font-size: 0.9rem;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Add hover effect for nav links */
+.navbar .nav-link:hover {
+    color: #d3d3d3; /* Light gray hover color */
+    transition: color 0.3s ease-in-out; /* Smooth color transition */
+}
+
+
+/* Center the carousel and limit its width */
+.carousel {
+    max-width: 90%; /* Limits width to 90% of the screen */
+    margin: 0 auto; /* Centers the carousel */
+    padding: 10px; /* Adds padding around the carousel */
+    box-sizing: border-box; /* Ensures padding doesn't increase total width */
+}
+
+.carousel-inner img {
+    width: 100%; /* Makes the image responsive within the carousel */
+    height: auto; /* Maintains aspect ratio */
+    max-height: 70vh; /* Limits the height to prevent too-large images */
+    object-fit: cover; /* Ensures image fills the container without distortion */
+    padding: 10px; /* Adds padding inside the image container */
+    border: 2px solid #ddd; /* Adds a light border around the images */
+    border-radius: 5px; /* Rounds the corners of the image */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+}
+
+/* Additional adjustment for smaller screens */
+@media (max-width: 768px) {
+    .carousel-inner img {
+        max-height: 50vh; /* Further reduce height on smaller screens */
+    }
+}
+
+
+
+/* Product image styling for consistency */
+.product-image {
+  height: 250px;  /* Set a fixed height for all images */
+  object-fit: cover; /* Maintain aspect ratio while covering the area */
+}
+
+/* Location section margin to ensure it's not hidden by the footer */
+#location-section {
+  margin-bottom: 1500px;
+    /*z-index:1;*/
+}
+
+
+/*!*contact*!*/
+/*body {*/
+/*    font-family: Arial, sans-serif;*/
+/*}*/
+
+/*.contact-container {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    flex-wrap: wrap;*/
+/*    max-width: 1200px;*/
+/*    margin: 0 auto;*/
+/*    padding: 20px;*/
+/*}*/
+
+/*.contact-left {*/
+/*    flex: 1;*/
+/*    margin-right: 20px;*/
+/*}*/
+
+/*.contact-right {*/
+/*    flex: 1;*/
+/*    max-width: 500px;*/
+/*    padding: 20px;*/
+/*    background-color: #f7f7f7;*/
+/*    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);*/
+/*    border-radius: 8px;*/
+/*}*/
+
+/*.contact-details {*/
+/*    background: #f0f0f0;*/
+/*    padding: 20px;*/
+/*    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);*/
+/*    border-radius: 8px;*/
+/*}*/
+
+/*.contact-details h2 {*/
+/*    margin-top: 0;*/
+/*    font-family: Arial, sans-serif;*/
+/*}*/
+
+/*.contact-details p {*/
+/*    margin: 5px 0;*/
+/*}*/
+
+/*iframe {*/
+/*    border: none;*/
+/*    width: 100%;*/
+/*    margin-bottom: 20px;*/
+/*    border-radius: 8px;*/
+/*}*/
+
+/*!* Form styles *!*/
+/*.contact-right h2 {*/
+/*    margin-top: 0;*/
+/*}*/
+
+/*form {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*}*/
+
+/*form label {*/
+/*    margin-top: 10px;*/
+/*}*/
+
+/*form input,*/
+/*form textarea {*/
+/*    padding: 10px;*/
+/*    margin-top: 5px;*/
+/*    margin-bottom: 15px;*/
+/*    border: 1px solid #ccc;*/
+/*    border-radius: 4px;*/
+/*    width: 100%;*/
+/*}*/
+
+/*form button {*/
+/*    padding: 10px 20px;*/
+/*    background-color: #28a745;*/
+/*    color: white;*/
+/*    border: none;*/
+/*    border-radius: 4px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*form button:hover {*/
+/*    background-color: #218838;*/
+/*}*/

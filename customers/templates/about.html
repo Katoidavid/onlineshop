@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- About Section Title -->
+<div class="container my-4">
+  <h1 class="text-center">About Phoemar</h1>
+  <p class="lead text-center">
+    Welcome to Phoemar! We are a sustainable farm located in Kathiani, Kitui West Subcounty, where we prioritize fresh, quality produce and responsible farming practices.
+  </p>
+</div>
+
+<!-- Farm Overview -->
+<div class="container my-5">
+  <h3 class="text-center">Our Journey</h3>
+  <p class="text-center">
+    Founded in 2022, Phoemar has rapidly grown into a farm dedicated to producing high-quality, organic crops and livestock. Our farm is located in the heart of Kathiani, where we harness the natural environment to bring you the best of what nature has to offer.
+  </p>
+</div>
+
+<!-- Products Section -->
+<div class="container my-5">
+  <h3 class="text-center">Our Products</h3>
+  <p class="text-center">
+    At Phoemar, we offer a variety of products grown and produced with care. Our diverse selection includes:
+  </p>
+
+  <!-- First Row of Products -->
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="{% static 'images/onions.png' %}" class="card-img-top product-image" alt="Onions">
+        <div class="card-body">
+          <h5 class="card-title">Onions</h5>
+          <p class="card-text">Fresh, organic onions grown with the best farming practices, delivering great taste and quality.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="{% static 'images/watermelon.png' %}" class="card-img-top product-image" alt="Watermelon">
+        <div class="card-body">
+          <h5 class="card-title">Watermelon</h5>
+          <p class="card-text">Sweet and juicy watermelons, grown under natural conditions to ensure top-notch flavor and nutrition.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="{% static 'images/tomatoes.png' %}" class="card-img-top product-image" alt="Tomatoes">
+        <div class="card-body">
+          <h5 class="card-title">Tomatoes</h5>
+          <p class="card-text">Ripe, fresh tomatoes that are perfect for cooking or enjoying raw in your favorite salads.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Second Row of Products -->
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="{% static 'images/honey.png' %}" class="card-img-top product-image" alt="Honey">
+        <div class="card-body">
+          <h5 class="card-title">Honey</h5>
+          <p class="card-text">Pure, natural honey harvested directly from our beehives, with no additives or preservatives.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="{% static 'images/chicken.png' %}" class="card-img-top product-image" alt="Chicken">
+        <div class="card-body">
+          <h5 class="card-title">Chicken</h5>
+          <p class="card-text">Free-range, healthy chickens raised in a clean, safe environment, offering the best poultry products.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="{% static 'images/fish.png' %}" class="card-img-top product-image" alt="Fish">
+        <div class="card-body">
+          <h5 class="card-title">Fish</h5>
+          <p class="card-text">Fresh, farm-raised fish from our well-maintained fishponds, offering a healthy protein source.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Location Section -->
+<div class="container my-5" id="location-section">
+  <h3 class="text-center">Our Location</h3>
+  <p class="text-center">
+    Phoemar is located in Kathiani, Kitui West Subcounty, where we take advantage of the fertile land and favorable climate to produce our crops and livestock. Our farm is easily accessible, and we invite you to visit us to experience the beauty of sustainable farming.
+  </p>
+</div>
+
+
+{% if messages %}
+    {% for message in messages %}
+       <div class="alert {{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+{% endif %}
+<h3>Customer List</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Photo</th>
+      <th>Name</th>
+      <th>Admission Number</th>
+      <th>Phone Number</th>
+      <th>Email</th>
+      <th>Gender</th>
+      <th>County</th>
+      <th>Age</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for customer in data %}
+      <tr>
+        <td>
+          {% if customer.image %}
+            <img src="{{ customer.image.url }}" alt="{{ customer.name }}" style="width: 80px; height: 80px; object-fit: cover;">
+          {% else %}
+            <img src="{% static 'images/placeholder.png' %}" alt="No image" style="width: 80px; height: 80px; object-fit: cover;">
+          {% endif %}
+        </td>
+        <td>{{ customer.name }}</td>
+        <td>{{ customer.admissionNumber }}</td>
+        <td>{{ customer.phoneNumber }}</td>
+        <td>{{ customer.email }}</td>
+        <td>{{ customer.gender }}</td>
+        <td>{{ customer.county }}</td>
+        <td>{{ customer.age }}</td> <!-- Corrected -->
+        <td>
+          <a href="{% url 'update' customer.id %}" class="btn btn-success">Update</a>
+          <a href="{% url 'delete' customer.id %}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this customer?')">Delete</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+{% endblock %}
